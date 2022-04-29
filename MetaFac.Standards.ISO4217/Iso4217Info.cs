@@ -2,6 +2,9 @@
 
 namespace MetaFac.Standards.ISO4217
 {
+    /// <summary>
+    /// Information record for a currency.
+    /// </summary>
     public class Iso4217Info
     {
         /// <summary>
@@ -31,7 +34,15 @@ namespace MetaFac.Standards.ISO4217
 
         private readonly int _minorUnitsPerMajorUnit;
 
-
+        /// <summary>
+        /// Constructs a currency information record.
+        /// </summary>
+        /// <param name="num"></param>
+        /// <param name="code"></param>
+        /// <param name="fullName"></param>
+        /// <param name="country"></param>
+        /// <param name="decimals"></param>
+        /// <exception cref="ArgumentOutOfRangeException"></exception>
         public Iso4217Info(short num, string code, string fullName, string country, int? decimals)
         {
             Num = num;
@@ -67,11 +78,26 @@ namespace MetaFac.Standards.ISO4217
             }
         }
 
+        /// <summary>
+        /// Converts a minor currency unit (eg. cents) to the major currency unit (eg. dollars).
+        /// Note that some currencies do not differentiate major and minor currency units
+        /// (eg. Japanese Yen).
+        /// </summary>
+        /// <param name="minorAmount"></param>
+        /// <returns></returns>
         public double ToMajorUnits(long minorAmount)
         {
             return 1.0D * minorAmount / _minorUnitsPerMajorUnit;
         }
 
+        /// <summary>
+        /// Converts a major currency unit (eg. dollars) to the minor currency unit (eg. cents),
+        /// and returns the rounding error.Note that some currencies do not differentiate major 
+        /// and minor currency units (eg. Japanese Yen).
+        /// </summary>
+        /// <param name="majorAmount"></param>
+        /// <param name="rounding"></param>
+        /// <returns></returns>
         public long ToMinorUnits(double majorAmount, out double rounding)
         {
             long result = Convert.ToInt64(majorAmount * _minorUnitsPerMajorUnit);

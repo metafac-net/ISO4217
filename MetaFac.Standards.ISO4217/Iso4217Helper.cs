@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Linq;
 
 namespace MetaFac.Standards.ISO4217
@@ -11,11 +12,14 @@ namespace MetaFac.Standards.ISO4217
     /// </summary>
     public static class Iso4217Helper
     {
-        public static List<Iso4217Info> Codes { get; }
+        /// <summary>
+        /// The list of currency records.
+        /// </summary>
+        public static ImmutableList<Iso4217Info> Codes { get; }
 
         static Iso4217Helper()
         {
-            Codes = new List<Iso4217Info>
+            Codes = ImmutableList<Iso4217Info>.Empty.AddRange(new List<Iso4217Info>
             {
                 new Iso4217Info(971, "AFN", "Afghani", "AFGHANISTAN", 2),
                 new Iso4217Info(978, "EUR", "Euro", "ÅLAND ISLANDS", 2),
@@ -296,24 +300,24 @@ namespace MetaFac.Standards.ISO4217
                 new Iso4217Info(964, "XPD", "Palladium", "ZZ09_Palladium", null),
                 new Iso4217Info(962, "XPT", "Platinum", "ZZ10_Platinum", null),
                 new Iso4217Info(961, "XAG", "Silver", "ZZ11_Silver", null)
-            };
+            });
         }
 
-        public static Iso4217Info? GetByCode(string code)
-        {
-            return Codes.FirstOrDefault(x => x.Code.Equals(code, StringComparison.OrdinalIgnoreCase));
-        }
-
+        /// <summary>
+        /// Finds all currency records matching the 3-character code.
+        /// </summary>
+        /// <param name="code"></param>
+        /// <returns></returns>
         public static IEnumerable<Iso4217Info> GetAllByCode(string code)
         {
             return Codes.Where(x => x.Code.Equals(code, StringComparison.OrdinalIgnoreCase));
         }
 
-        public static Iso4217Info? GetByNum(int num)
-        {
-            return Codes.FirstOrDefault(x => x.Num == num);
-        }
-
+        /// <summary>
+        /// Finds all currency records matching the 3-digit number.
+        /// </summary>
+        /// <param name="num"></param>
+        /// <returns></returns>
         public static IEnumerable<Iso4217Info> GetAllByNum(int num)
         {
             return Codes.Where(x => x.Num == num);

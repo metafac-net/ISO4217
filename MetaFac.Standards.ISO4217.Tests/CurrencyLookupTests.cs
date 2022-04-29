@@ -1,5 +1,6 @@
 using FluentAssertions;
 using MetaFac.Standards.ISO4217;
+using System.Linq;
 using Xunit;
 
 namespace MetaFac.Standards.ISO4217.Tests
@@ -39,7 +40,7 @@ namespace MetaFac.Standards.ISO4217.Tests
         [InlineData("XDR", "SDR (Special Drawing Right)", null)]
         public void GetByCode(string code, string? expectedFullName, int? expectedDecimals)
         {
-            var info = Iso4217Helper.GetByCode(code);
+            var info = Iso4217Helper.GetAllByCode(code).FirstOrDefault();
 
             info.Should().NotBeNull();
             info?.FullName.Should().Be(expectedFullName);
@@ -52,7 +53,7 @@ namespace MetaFac.Standards.ISO4217.Tests
         [InlineData(null)]
         public void GetByCodeFails(string code)
         {
-            var info = Iso4217Helper.GetByCode(code);
+            var info = Iso4217Helper.GetAllByCode(code).FirstOrDefault();
 
             info.Should().BeNull();
         }
@@ -64,7 +65,7 @@ namespace MetaFac.Standards.ISO4217.Tests
         [InlineData(000, "")]
         public void GetByNum(int num, string? expectedCode)
         {
-            var info = Iso4217Helper.GetByNum(num);
+            var info = Iso4217Helper.GetAllByNum(num).FirstOrDefault();
             info?.Code.Should().Be(expectedCode);
         }
 
