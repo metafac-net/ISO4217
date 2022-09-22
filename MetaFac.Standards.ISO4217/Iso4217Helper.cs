@@ -234,6 +234,7 @@ namespace MetaFac.Standards.ISO4217
                 new Iso4217Info(941, "RSD", "Serbian Dinar", "SERBIA", 2),
                 new Iso4217Info(690, "SCR", "Seychelles Rupee", "SEYCHELLES", 2),
                 new Iso4217Info(694, "SLL", "Leone", "SIERRA LEONE", 2),
+                new Iso4217Info(925, "SLE", "Leone", "SIERRA LEONE", 2),
                 new Iso4217Info(702, "SGD", "Singapore Dollar", "SINGAPORE", 2),
                 new Iso4217Info(532, "ANG", "Netherlands Antillean Guilder", "SINT MAARTEN (DUTCH PART)", 2),
                 new Iso4217Info(994, "XSU", "Sucre", "SISTEMA UNITARIO DE COMPENSACION REGIONAL DE PAGOS SUCRE", null),
