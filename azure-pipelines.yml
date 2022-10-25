@@ -10,8 +10,16 @@ variables:
 steps:
 - task: UseDotNet@2
   inputs:
+    displayName: 'Use .NET 6.x'
     packageType: 'sdk'
     version: '6.x'
+    includePreviewVersions: false
+    
+- task: UseDotNet@2
+  inputs:
+    displayName: 'Use .NET 7.x'
+    packageType: 'sdk'
+    version: '7.x'
     includePreviewVersions: true
     
 - script: dotnet build --configuration $(buildConfiguration)
