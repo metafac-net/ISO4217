@@ -266,7 +266,7 @@ namespace MetaFac.Standards.ISO4217
                 new Iso4217Info(776, "TOP", "Pa’anga", "TONGA", 2),
                 new Iso4217Info(780, "TTD", "Trinidad and Tobago Dollar", "TRINIDAD AND TOBAGO", 2),
                 new Iso4217Info(788, "TND", "Tunisian Dinar", "TUNISIA", 3),
-                new Iso4217Info(949, "TRY", "Turkish Lira", "TURKEY", 2),
+                new Iso4217Info(949, "TRY", "Turkish Lira", "TÜRKİYE", 2),
                 new Iso4217Info(934, "TMT", "Turkmenistan New Manat", "TURKMENISTAN", 2),
                 new Iso4217Info(840, "USD", "US Dollar", "TURKS AND CAICOS ISLANDS (THE)", 2),
                 new Iso4217Info(036, "AUD", "Australian Dollar", "TUVALU", 2),
