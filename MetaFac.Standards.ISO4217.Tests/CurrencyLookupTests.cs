@@ -7,6 +7,23 @@ namespace MetaFac.Standards.ISO4217.Tests
 {
     public class CurrencyLookupTests
     {
+        [Fact]
+        public void TotalCurrencyRecords()
+        {
+            Iso4217Helper.Codes.Count.Should().Be(280);
+        }
+
+        [Fact]
+        public void TotalUniqueCurrencyCodes()
+        {
+            Iso4217Helper.Codes.Select(x => x.Code).Distinct().Count().Should().Be(181);
+        }
+
+        [Fact]
+        public void TotalUniqueCountryNames()
+        {
+            Iso4217Helper.Codes.Select(x => x.Country).Distinct().Count().Should().Be(263);
+        }
 
         [Theory]
         [InlineData("EUR", 35)]
