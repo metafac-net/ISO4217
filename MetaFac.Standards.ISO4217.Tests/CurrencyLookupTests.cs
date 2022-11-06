@@ -1,5 +1,4 @@
 using FluentAssertions;
-using MetaFac.Standards.ISO4217;
 using System.Linq;
 using Xunit;
 
@@ -17,6 +16,12 @@ namespace MetaFac.Standards.ISO4217.Tests
         public void TotalUniqueCurrencyCodes()
         {
             Iso4217Helper.Codes.Select(x => x.Code).Distinct().Count().Should().Be(181);
+        }
+
+        [Fact]
+        public void TotalUniqueCurrencyNumbers()
+        {
+            Iso4217Helper.Codes.Select(x => x.Num).Distinct().Count().Should().Be(181);
         }
 
         [Fact]
