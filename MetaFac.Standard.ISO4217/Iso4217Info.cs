@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MetaFac.Standards.ISO4217
+namespace MetaFac.Standard.ISO4217
 {
     /// <summary>
     /// Information record for a currency.

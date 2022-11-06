@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Linq;
 
-namespace MetaFac.Standards.ISO4217
+namespace MetaFac.Standard.ISO4217
 {
     /// <summary>
     /// Currency codes defined by ISO 4217 at https://www.iso.org/iso-4217-currency-codes.html

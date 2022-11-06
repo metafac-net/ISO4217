@@ -23,7 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MetaFac.Standards.ISO4217\MetaFac.Standards.ISO4217.csproj" />
+    <ProjectReference Include="..\MetaFac.Standard.ISO4217\MetaFac.Standard.ISO4217.csproj" />
   </ItemGroup>
 
 </Project>

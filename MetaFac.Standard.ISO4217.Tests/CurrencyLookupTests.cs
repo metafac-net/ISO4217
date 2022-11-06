@@ -2,7 +2,7 @@ using FluentAssertions;
 using System.Linq;
 using Xunit;
 
-namespace MetaFac.Standards.ISO4217.Tests
+namespace MetaFac.Standard.ISO4217.Tests
 {
     public class CurrencyLookupTests
     {
