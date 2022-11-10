@@ -9,8 +9,9 @@
     <Copyright>Copyright (c) 2022 MetaFac</Copyright>
     <Company>MetaFac</Company>
     <Authors>MetaFac Contributors</Authors>
-    <Product>Standards</Product>
+    <Product>Standard</Product>
     <Description>ISO 4217 currency codes</Description>
+	<Title>MetaFac.Standard</Title>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
