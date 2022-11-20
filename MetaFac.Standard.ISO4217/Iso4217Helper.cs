@@ -8,7 +8,7 @@ namespace MetaFac.Standard.ISO4217
     /// <summary>
     /// Currency codes defined by ISO 4217 at https://www.iso.org/iso-4217-currency-codes.html
     /// Descriptive information is obtained from https://en.wikipedia.org/wiki/ISO_4217
-    /// XML data from https://www.six-group.com/dam/download/financial-information/data-center/iso-currrency/lists/list_one.xml
+    /// XML data from https://www.six-group.com/dam/download/financial-information/data-center/iso-currrency/lists/list-one.xml
     /// </summary>
     public static class Iso4217Helper
     {
