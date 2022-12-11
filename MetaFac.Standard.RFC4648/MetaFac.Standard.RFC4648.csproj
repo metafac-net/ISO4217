@@ -1,0 +1,44 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	  <TargetFrameworks>netstandard2.0;net6.0;net7.0</TargetFrameworks>
+	  <LangVersion>latest</LangVersion>
+	  <Nullable>enable</Nullable>
+	  <WarningsAsErrors>nullable</WarningsAsErrors>
+	  <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+	  <Copyright>Copyright (c) 2022 MetaFac</Copyright>
+	  <Company>MetaFac</Company>
+	  <Authors>MetaFac Contributors</Authors>
+	  <Product>Standard</Product>
+	  <Description>RFC 4648 codecs</Description>
+	  <Title>MetaFac.Standard</Title>
+	  <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+	  <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+	  <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+	  <PackageReadmeFile>README.md</PackageReadmeFile>
+	  <SignAssembly>True</SignAssembly>
+	  <AssemblyOriginatorKeyFile>..\SigningKey.snk</AssemblyOriginatorKeyFile>
+	  <IncludeSymbols>true</IncludeSymbols>
+	  <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+	  <PackageProjectUrl>https://dev.azure.com/metafac/OSR</PackageProjectUrl>
+	  <RepositoryUrl>https://dev.azure.com/metafac/OSR/_git/Standards</RepositoryUrl>
+	  <ProduceReferenceAssembly>True</ProduceReferenceAssembly>
+	  <GenerateDocumentationFile>True</GenerateDocumentationFile>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<None Include="..\README.md">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Nerdbank.GitVersioning" Version="3.5.119">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="System.Memory" Version="4.5.5" />
+	</ItemGroup>
+
+</Project>
