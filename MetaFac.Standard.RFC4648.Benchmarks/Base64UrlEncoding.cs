@@ -21,10 +21,9 @@ namespace MetaFac.Standard.RFC4648.Benchmarks
         [Benchmark(Baseline = true)]
         public int System_Base64Std_SpanOnly()
         {
-            int bytesWritten = 0;
             ReadOnlySpan<byte> source = plainBytes.AsSpan(); //.Slice(0, Length);
             Span<byte> target = stackalloc byte[100];
-            var status = Base64.EncodeToUtf8(source, target, out var bytesConsumed, out bytesWritten, true);
+            var status = Base64.EncodeToUtf8(source, target, out var bytesConsumed, out var bytesWritten, true);
             return bytesWritten;
         }
 
@@ -61,18 +60,18 @@ namespace MetaFac.Standard.RFC4648.Benchmarks
         {
             ReadOnlySpan<byte> source = plainBytes.AsSpan(); //.Slice(0, Length);
             Span<byte> target = stackalloc byte[100];
-            Base64UrlEncoder.EncodeToUtf8(source, target, out int bytesWritten);
+            Base64UrlEncoder.EncodeToUtf8(source, target, out var bytesWritten);
             return bytesWritten;
         }
 
-        [Benchmark]
-        public int MetaFac2_Base64Url_SpanOnly()
-        {
-            ReadOnlySpan<byte> source = plainBytes.AsSpan(); //.Slice(0, Length);
-            Span<byte> target = stackalloc byte[100];
-            Base64UrlEncoder2.EncodeToUtf8(source, target, out int bytesWritten);
-            return bytesWritten;
-        }
+        //[Benchmark]
+        //public int MetaFac2_Base64Url_SpanOnly()
+        //{
+        //    ReadOnlySpan<byte> source = plainBytes.AsSpan(); //.Slice(0, Length);
+        //    Span<byte> target = stackalloc byte[100];
+        //    Base64UrlEncoder2.EncodeToUtf8(source, target, out var bytesWritten);
+        //    return bytesWritten;
+        //}
 
         //[Benchmark]
         //public int MetaFac3_Base64Url_SpanOnly()

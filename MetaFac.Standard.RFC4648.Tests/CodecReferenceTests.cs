@@ -12,7 +12,7 @@ namespace MetaFac.Standard.RFC4648.Tests
         System_Buffers_Text,
         Multiformats_Base__,
         MetaFac1_Standard__,
-        MetaFac2_Standard__,
+        //MetaFac2_Standard__,
         // todo
         //MetaFac3_Standard__
     }
@@ -35,22 +35,22 @@ namespace MetaFac.Standard.RFC4648.Tests
         [InlineData(CodecLibrary.System_Buffers_Text, 0, 0, 0, "AAAA")]
         [InlineData(CodecLibrary.Multiformats_Base__, 0, 0, 0, "uAAAA")]
         [InlineData(CodecLibrary.MetaFac1_Standard__, 0, 0, 0, "AAAA")]
-        [InlineData(CodecLibrary.MetaFac2_Standard__, 0, 0, 0, "AAAA")]
+        //[InlineData(CodecLibrary.MetaFac2_Standard__, 0, 0, 0, "AAAA")]
         //[InlineData(CodecLibrary.MetaFac3_Standard__, 0, 0, 0, "AAAA")]
         [InlineData(CodecLibrary.System_Buffers_Text, 1, 1, 1, "AQEB")]
         [InlineData(CodecLibrary.Multiformats_Base__, 1, 1, 1, "uAQEB")]
         [InlineData(CodecLibrary.MetaFac1_Standard__, 1, 1, 1, "AQEB")]
-        [InlineData(CodecLibrary.MetaFac2_Standard__, 1, 1, 1, "AQEB")]
+        //[InlineData(CodecLibrary.MetaFac2_Standard__, 1, 1, 1, "AQEB")]
         //[InlineData(CodecLibrary.MetaFac3_Standard__, 1, 1, 1, "AQEB")]
         [InlineData(CodecLibrary.System_Buffers_Text, 254, 254, 254, "_v7-")]
         [InlineData(CodecLibrary.Multiformats_Base__, 254, 254, 254, "u_v7-")]
         [InlineData(CodecLibrary.MetaFac1_Standard__, 254, 254, 254, "_v7-")]
-        [InlineData(CodecLibrary.MetaFac2_Standard__, 254, 254, 254, "_v7-")]
+        //[InlineData(CodecLibrary.MetaFac2_Standard__, 254, 254, 254, "_v7-")]
         //[InlineData(CodecLibrary.MetaFac3_Standard__, 254, 254, 254, "_v7-")]
         [InlineData(CodecLibrary.System_Buffers_Text, 255, 255, 255, "____")]
         [InlineData(CodecLibrary.Multiformats_Base__, 255, 255, 255, "u____")]
         [InlineData(CodecLibrary.MetaFac1_Standard__, 255, 255, 255, "____")]
-        [InlineData(CodecLibrary.MetaFac2_Standard__, 255, 255, 255, "____")]
+        //[InlineData(CodecLibrary.MetaFac2_Standard__, 255, 255, 255, "____")]
         //[InlineData(CodecLibrary.MetaFac3_Standard__, 255, 255, 255, "____")]
         public void Base64UrlComparison3(CodecLibrary codec, byte inp0, byte inp1, byte inp2, string expected)
         {
@@ -77,12 +77,12 @@ namespace MetaFac.Standard.RFC4648.Tests
                         result.Should().Be(expected);
                     }
                     break;
-                case CodecLibrary.MetaFac2_Standard__:
-                    {
-                        string result = Base64UrlEncoder2.EncodeBase64Url(input);
-                        result.Should().Be(expected);
-                    }
-                    break;
+                //case CodecLibrary.MetaFac2_Standard__:
+                //    {
+                //        string result = Base64UrlEncoder2.EncodeBase64Url(input);
+                //        result.Should().Be(expected);
+                //    }
+                //    break;
                 //case CodecLibrary.MetaFac3_Standard__:
                 //    {
                 //        string result = Base64UrlEncoder3.EncodeBase64Url(input);
@@ -98,22 +98,22 @@ namespace MetaFac.Standard.RFC4648.Tests
         [InlineData(CodecLibrary.System_Buffers_Text, 0, 0, "AAA")]
         [InlineData(CodecLibrary.Multiformats_Base__, 0, 0, "uAAA")]
         [InlineData(CodecLibrary.MetaFac1_Standard__, 0, 0, "AAA")]
-        [InlineData(CodecLibrary.MetaFac2_Standard__, 0, 0, "AAA")]
+        //[InlineData(CodecLibrary.MetaFac2_Standard__, 0, 0, "AAA")]
         //[InlineData(CodecLibrary.MetaFac3_Standard__, 0, 0, "AAA")]
         [InlineData(CodecLibrary.System_Buffers_Text, 1, 1, "AQE")]
         [InlineData(CodecLibrary.Multiformats_Base__, 1, 1, "uAQE")]
         [InlineData(CodecLibrary.MetaFac1_Standard__, 1, 1, "AQE")]
-        [InlineData(CodecLibrary.MetaFac2_Standard__, 1, 1, "AQE")]
+        //[InlineData(CodecLibrary.MetaFac2_Standard__, 1, 1, "AQE")]
         //[InlineData(CodecLibrary.MetaFac3_Standard__, 1, 1, "AQE")]
         [InlineData(CodecLibrary.System_Buffers_Text, 254, 254, "_v4")]
         [InlineData(CodecLibrary.Multiformats_Base__, 254, 254, "u_v4")]
         [InlineData(CodecLibrary.MetaFac1_Standard__, 254, 254, "_v4")]
-        [InlineData(CodecLibrary.MetaFac2_Standard__, 254, 254, "_v4")]
+        //[InlineData(CodecLibrary.MetaFac2_Standard__, 254, 254, "_v4")]
         //[InlineData(CodecLibrary.MetaFac3_Standard__, 254, 254, "_v4")]
         [InlineData(CodecLibrary.System_Buffers_Text, 255, 255, "__8")]
         [InlineData(CodecLibrary.Multiformats_Base__, 255, 255, "u__8")]
         [InlineData(CodecLibrary.MetaFac1_Standard__, 255, 255, "__8")]
-        [InlineData(CodecLibrary.MetaFac2_Standard__, 255, 255, "__8")]
+        //[InlineData(CodecLibrary.MetaFac2_Standard__, 255, 255, "__8")]
         //[InlineData(CodecLibrary.MetaFac3_Standard__, 255, 255, "__8")]
         public void Base64UrlComparison2(CodecLibrary codec, byte inp0, byte inp1, string expected)
         {
@@ -140,12 +140,12 @@ namespace MetaFac.Standard.RFC4648.Tests
                         result.Should().Be(expected);
                     }
                     break;
-                case CodecLibrary.MetaFac2_Standard__:
-                    {
-                        string result = Base64UrlEncoder2.EncodeBase64Url(input);
-                        result.Should().Be(expected);
-                    }
-                    break;
+                //case CodecLibrary.MetaFac2_Standard__:
+                //    {
+                //        string result = Base64UrlEncoder2.EncodeBase64Url(input);
+                //        result.Should().Be(expected);
+                //    }
+                //    break;
                 //case CodecLibrary.MetaFac3_Standard__:
                 //    {
                 //        string result = Base64UrlEncoder3.EncodeBase64Url(input);
