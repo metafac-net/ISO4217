@@ -80,7 +80,7 @@ namespace MetaFac.Standard.ISO4217
                 new Iso4217Info(554, "NZD", "New Zealand Dollar", "COOK ISLANDS (THE)", 2),
                 new Iso4217Info(188, "CRC", "Costa Rican Colon", "COSTA RICA", 2),
                 new Iso4217Info(952, "XOF", "CFA Franc BCEAO", "CÔTE D'IVOIRE", 0),
-                new Iso4217Info(191, "HRK", "Kuna", "CROATIA", 2),
+                new Iso4217Info(978, "EUR", "Euro", "CROATIA", 2),
                 new Iso4217Info(192, "CUP", "Cuban Peso", "CUBA", 2),
                 new Iso4217Info(931, "CUC", "Peso Convertible", "CUBA", 2),
                 new Iso4217Info(532, "ANG", "Netherlands Antillean Guilder", "CURAÇAO", 2),
