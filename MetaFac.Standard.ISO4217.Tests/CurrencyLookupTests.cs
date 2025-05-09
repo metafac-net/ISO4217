@@ -9,19 +9,19 @@ namespace MetaFac.Standard.ISO4217.Tests
         [Fact]
         public void TotalCurrencyRecords()
         {
-            Iso4217Helper.Codes.Count.Should().Be(279);
+            Iso4217Helper.Codes.Count.Should().Be(278);
         }
 
         [Fact]
         public void TotalUniqueCurrencyCodes()
         {
-            Iso4217Helper.Codes.Select(x => x.Code).Distinct().Count().Should().Be(179);
+            Iso4217Helper.Codes.Select(x => x.Code).Distinct().Count().Should().Be(178);
         }
 
         [Fact]
         public void TotalUniqueCurrencyNumbers()
         {
-            Iso4217Helper.Codes.Select(x => x.Num).Distinct().Count().Should().Be(179);
+            Iso4217Helper.Codes.Select(x => x.Num).Distinct().Count().Should().Be(178);
         }
 
         [Fact]
@@ -39,6 +39,8 @@ namespace MetaFac.Standard.ISO4217.Tests
         [InlineData(null, 0)]
         [InlineData("ZZZ", 0)]
         [InlineData("random string", 0)]
+        [InlineData("XCG", 2)]
+        [InlineData("ANG", 0)]
         public void GetAllByCode(string? code, int expectedCount)
         {
             var currencies = Iso4217Helper.GetAllByCode(code);
