@@ -2,14 +2,12 @@
 using BenchmarkDotNet.Jobs;
 using System.Buffers.Text;
 using System.Text;
-using Multiformats.Base;
 using BenchmarkDotNet.Order;
 
 namespace MetaFac.Standard.RFC4648.Benchmarks
 {
-    //[SimpleJob(RuntimeMoniker.Net48)]
-    //[SimpleJob(RuntimeMoniker.Net60)]
-    [SimpleJob(RuntimeMoniker.Net70)]
+    [SimpleJob(RuntimeMoniker.Net80)]
+    [SimpleJob(RuntimeMoniker.Net90)]
     [Orderer(SummaryOrderPolicy.FastestToSlowest)]
     [MemoryDiagnoser]
     public class Base64UrlEncoding
