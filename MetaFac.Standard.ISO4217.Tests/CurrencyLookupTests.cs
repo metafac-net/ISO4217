@@ -9,7 +9,7 @@ namespace MetaFac.Standard.ISO4217.Tests
         [Fact]
         public void TotalCurrencyRecords()
         {
-            Iso4217Helper.Codes.Count.Should().Be(278);
+            Iso4217Helper.Codes.Count.Should().Be(279);
         }
 
         [Fact]
@@ -27,11 +27,11 @@ namespace MetaFac.Standard.ISO4217.Tests
         [Fact]
         public void TotalUniqueCountryNames()
         {
-            Iso4217Helper.Codes.Select(x => x.Country).Distinct().Count().Should().Be(263);
+            Iso4217Helper.Codes.Select(x => x.Country).Distinct().Count().Should().Be(264);
         }
 
         [Theory]
-        [InlineData("EUR", 36)]
+        [InlineData("EUR", 37)]
         [InlineData("UAH", 1)]
         [InlineData("USD", 19)]
         [InlineData("usd", 19)]
@@ -95,7 +95,7 @@ namespace MetaFac.Standard.ISO4217.Tests
 
         [Theory]
         [InlineData(980, 1)]
-        [InlineData(978, 36)]
+        [InlineData(978, 37)]
         [InlineData(840, 19)]
         [InlineData(000, 3)]
         [InlineData(999, 1)]
