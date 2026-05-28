@@ -7,7 +7,7 @@ using BenchmarkDotNet.Order;
 namespace MetaFac.Standard.RFC4648.Benchmarks
 {
     [SimpleJob(RuntimeMoniker.Net80)]
-    [SimpleJob(RuntimeMoniker.Net90)]
+    [SimpleJob(RuntimeMoniker.Net10_0)]
     [Orderer(SummaryOrderPolicy.FastestToSlowest)]
     [MemoryDiagnoser]
     public class Base64UrlEncoding
