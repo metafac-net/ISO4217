@@ -20,8 +20,8 @@
     <AssemblyOriginatorKeyFile>..\SigningKey.snk</AssemblyOriginatorKeyFile>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-    <PackageProjectUrl>https://dev.azure.com/metafac/OSR</PackageProjectUrl>
-    <RepositoryUrl>https://dev.azure.com/metafac/OSR/_git/Standards</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/metafac-net/ISO4217</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/metafac-net/ISO4217</RepositoryUrl>
     <ProduceReferenceAssembly>True</ProduceReferenceAssembly>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
