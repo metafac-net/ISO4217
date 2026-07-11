@@ -1,4 +1,4 @@
-using FluentAssertions;
+using Shouldly;
 using System.Linq;
 using Xunit;
 
@@ -9,25 +9,25 @@ namespace MetaFac.Standard.ISO4217.Tests
         [Fact]
         public void TotalCurrencyRecords()
         {
-            Iso4217Helper.Codes.Count.Should().Be(279);
+            Iso4217Helper.Codes.Count.ShouldBe(279);
         }
 
         [Fact]
         public void TotalUniqueCurrencyCodes()
         {
-            Iso4217Helper.Codes.Select(x => x.Code).Distinct().Count().Should().Be(178);
+            Iso4217Helper.Codes.Select(x => x.Code).Distinct().Count().ShouldBe(178);
         }
 
         [Fact]
         public void TotalUniqueCurrencyNumbers()
         {
-            Iso4217Helper.Codes.Select(x => x.Num).Distinct().Count().Should().Be(178);
+            Iso4217Helper.Codes.Select(x => x.Num).Distinct().Count().ShouldBe(178);
         }
 
         [Fact]
         public void TotalUniqueCountryNames()
         {
-            Iso4217Helper.Codes.Select(x => x.Country).Distinct().Count().Should().Be(264);
+            Iso4217Helper.Codes.Select(x => x.Country).Distinct().Count().ShouldBe(264);
         }
 
         [Theory]
@@ -44,8 +44,7 @@ namespace MetaFac.Standard.ISO4217.Tests
         public void GetAllByCode(string? code, int expectedCount)
         {
             var currencies = Iso4217Helper.GetAllByCode(code);
-
-            currencies.Should().HaveCount(expectedCount);
+            currencies.Count().ShouldBe(expectedCount);
         }
 
         [Theory]
@@ -66,9 +65,9 @@ namespace MetaFac.Standard.ISO4217.Tests
         {
             var info = Iso4217Helper.GetAllByCode(code).FirstOrDefault();
 
-            info.Should().NotBeNull();
-            info?.FullName.Should().Be(expectedFullName);
-            info?.Decimals.Should().Be(expectedDecimals);
+            info.ShouldNotBeNull();
+            info?.FullName.ShouldBe(expectedFullName);
+            info?.Decimals.ShouldBe(expectedDecimals);
         }
 
         [Theory]
@@ -79,7 +78,7 @@ namespace MetaFac.Standard.ISO4217.Tests
         {
             var info = Iso4217Helper.GetAllByCode(code).FirstOrDefault();
 
-            info.Should().BeNull();
+            info.ShouldBeNull();
         }
 
         [Theory]
@@ -90,7 +89,7 @@ namespace MetaFac.Standard.ISO4217.Tests
         public void GetByNum(int num, string? expectedCode)
         {
             var info = Iso4217Helper.GetAllByNum(num).FirstOrDefault();
-            info?.Code.Should().Be(expectedCode);
+            info?.Code.ShouldBe(expectedCode);
         }
 
         [Theory]
@@ -102,7 +101,7 @@ namespace MetaFac.Standard.ISO4217.Tests
         public void GetAllByNum(int num, int expectedCount)
         {
             var currencies = Iso4217Helper.GetAllByNum(num);
-            currencies.Should().HaveCount(expectedCount);
+            currencies.Count().ShouldBe(expectedCount);
         }
 
         [Theory]
@@ -110,7 +109,7 @@ namespace MetaFac.Standard.ISO4217.Tests
         public void GetAllByNumFails(int num)
         {
             var currencies = Iso4217Helper.GetAllByNum(num);
-            currencies.Should().HaveCount(0);
+            currencies.ShouldBeEmpty();
         }
     }
 }

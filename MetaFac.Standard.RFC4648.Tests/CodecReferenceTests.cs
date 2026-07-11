@@ -1,5 +1,5 @@
-using FluentAssertions;
 using Multiformats.Base;
+using Shouldly;
 using System;
 using System.Buffers;
 using System.Buffers.Text;
@@ -22,7 +22,7 @@ namespace MetaFac.Standard.RFC4648.Tests
         private static string SystemBuffersTextEncoder(ReadOnlySpan<byte> source, Span<byte> target)
         {
             var status = Base64.EncodeToUtf8(source, target, out var bytesConsumed, out int bytesWritten, true);
-            status.Should().Be(OperationStatus.Done);
+            status.ShouldBe(OperationStatus.Done);
 #if NET5_0_OR_GREATER
             string result = Encoding.UTF8.GetString(target.Slice(0, bytesWritten));
 #else
@@ -62,19 +62,19 @@ namespace MetaFac.Standard.RFC4648.Tests
                     {
                         Span<byte> target = stackalloc byte[4];
                         string result = SystemBuffersTextEncoder(input, target);
-                        result.Should().Be(expected);
+                        result.ShouldBe(expected);
                     }
                     break;
                 case CodecLibrary.Multiformats_Base__:
                     {
                         string result = Multibase.Encode(MultibaseEncoding.Base64Url, input);
-                        result.Should().Be(expected);
+                        result.ShouldBe(expected);
                     }
                     break;
                 case CodecLibrary.MetaFac1_Standard__:
                     {
                         string result = Base64UrlEncoder.EncodeBase64Url(input);
-                        result.Should().Be(expected);
+                        result.ShouldBe(expected);
                     }
                     break;
                 //case CodecLibrary.MetaFac2_Standard__:
@@ -125,19 +125,19 @@ namespace MetaFac.Standard.RFC4648.Tests
                     {
                         Span<byte> target = stackalloc byte[4];
                         string result = SystemBuffersTextEncoder(input, target);
-                        result.Should().Be(expected);
+                        result.ShouldBe(expected);
                     }
                     break;
                 case CodecLibrary.Multiformats_Base__:
                     {
                         string result = Multibase.Encode(MultibaseEncoding.Base64Url, input);
-                        result.Should().Be(expected);
+                        result.ShouldBe(expected);
                     }
                     break;
                 case CodecLibrary.MetaFac1_Standard__:
                     {
                         string result = Base64UrlEncoder.EncodeBase64Url(input);
-                        result.Should().Be(expected);
+                        result.ShouldBe(expected);
                     }
                     break;
                 //case CodecLibrary.MetaFac2_Standard__:
